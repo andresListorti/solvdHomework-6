@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debounce Search Example</title>
+  </head>
+  <body>
+    <input type="text" id="search-input" placeholder="Search..." />
+    <script src="./Homework 6 - Andres Listorti.js"></script>
+    <script>
+      function debouncedSearch(query) {
+        // Perform search operation with the query
+        console.log("Searching for:", query);
+      }
+      const debouncedSearchHandler = debounce(debouncedSearch, 300);
+      const inputElement = document.getElementById("search-input");
+      inputElement.addEventListener("input", (event) => {
+        debouncedSearchHandler(event.target.value);
+      });
+    </script>
+  </body>
+</html>
